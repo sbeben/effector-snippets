@@ -26,7 +26,7 @@
   "combine": {
     "scope": "javascript,typescript",
     "prefix": ["combine", "cmbn"],
-    "body": ["combine({$2},($3) => $4"]
+    "body": ["combine({$2},($3) => {$4})"]
   },
 
   "attach": {

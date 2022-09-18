@@ -18,3 +18,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changed
 
 -readme
+
+## [0.1.2] - 2022-09-18
+
+### Changed
+
+-readme
+-"combine" snippet fix
