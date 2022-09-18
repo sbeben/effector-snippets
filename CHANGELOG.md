@@ -6,4 +6,15 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-- Initial release
+## [0.1.0] - 2022-09-18
+
+### Added
+
+-All basic effector units and methods including Fork API
+-React bindings
+
+## [0.1.1] - 2022-09-18
+
+### Changed
+
+-readme
