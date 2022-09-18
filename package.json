@@ -2,7 +2,7 @@
   "name": "effector-snippets",
   "displayName": "effector-snippets",
   "description": "Snippets pack for effector. Includes complete list of core units and methods as well as framework bindings and other useful stuff.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Senia Merlin",
   "engines": {
     "vscode": "^1.71.0"
