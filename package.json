@@ -1,0 +1,34 @@
+{
+  "name": "effector-snippets",
+  "displayName": "effector-snippets",
+  "description": "Snippets pack for effector. Includes complete list of core units and methods as well as framework bindings and other useful stuff.",
+  "version": "0.1.0",
+  "author": "Senia Merlin",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/effector.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/effector.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/effector.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/effector.code-snippets"
+      }
+    ]
+  },
+  "icon": "images/comet.png"
+}

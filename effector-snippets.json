@@ -1,0 +1,180 @@
+{
+  // Basic units
+
+  "Create Store": {
+    "scope": "javascript,typescript",
+    "prefix": ["store", "str"],
+    "body": ["export const $$1 = createStore<$2>($3)"]
+  },
+
+  "Create Event": {
+    "scope": "javascript,typescript",
+    "prefix": ["event", "evt"],
+    "body": ["export const $1 = createEvent<$2>()"]
+  },
+
+  "Create Effect": {
+    "scope": "javascript,typescript",
+    "prefix": ["effect", "fx"],
+    "body": ["export const $1Fx = createEffect<$2>($3)"]
+  },
+
+  "Create Domain": {
+    "scope": "javascript,typescript",
+    "prefix": ["domain", "dmn"],
+    "body": ["export const $1 = createDomain($2)"]
+  },
+
+  //Methods
+
+  "combine": {
+    "scope": "javascript,typescript",
+    "prefix": ["combine", "cmbn"],
+    "body": ["combine({$2},($3) => $4"]
+  },
+
+  "attach": {
+    "scope": "javascript,typescript",
+    "prefix": ["attach", "atch"],
+    "body": [
+      "attach({",
+      "\teffect: $1,",
+      "\tmapParams: ($2) => $3,",
+      "\tsource: $4,",
+      "})"
+    ]
+  },
+
+  "sample": {
+    "scope": "javascript,typescript",
+    "prefix": ["sample", "smpl"],
+    "body": [
+      "sample({",
+      "\tclock: $1,",
+      "\tsource: $2,",
+      "\tfilter: $3,",
+      "\tfn:($4) => $5,",
+      "\ttarget: $6,",
+      "})"
+    ]
+  },
+
+  "split": {
+    "scope": "javascript,typescript",
+    "prefix": ["split", "splt"],
+    "body": [
+      "split({",
+      "\tclock:$1,",
+      "\tsource:$2,",
+      "\tmatch:{$3:},",
+      "\tcases:{$4:},",
+      "})"
+    ]
+  },
+
+  "createApi": {
+    "scope": "javascript,typescript",
+    "prefix": ["createApi", "api"],
+    "body": ["createApi({", "\t$$1,", "\t{$2: ($3) => $4},", "})"]
+  },
+
+  "forward": {
+    "scope": "javascript,typescript",
+    "prefix": ["forward", "fwd"],
+    "body": ["forward({", "\tfrom: $1,", "\tto: $2,", "})"]
+  },
+
+  "merge": {
+    "scope": "javascript,typescript",
+    "prefix": ["merge", "mrg"],
+    "body": ["export const $1 = merge([$2])"]
+  },
+
+  "fromObservable": {
+    "scope": "javascript,typescript",
+    "prefix": ["observable", "obsrv"],
+    "body": ["export const $1 = fromObservable($2)"]
+  },
+
+  //Fork API
+
+  "Scope": {
+    "scope": "javascript,typescript",
+    "prefix": ["scope", "fork"],
+    "body": ["export const $1 = fork($2)"]
+  },
+
+  "Serialize": {
+    "scope": "javascript,typescript",
+    "prefix": ["serialize", "srlz"],
+    "body": ["export const $1 = serialize($2)"]
+  },
+
+  "Hydrate": {
+    "scope": "javascript,typescript",
+    "prefix": ["hydrate", "hdrt"],
+    "body": ["hydrate($1, {$2}): void"]
+  },
+
+  "allSettled": {
+    "scope": "javascript,typescript",
+    "prefix": ["settled", "stld"],
+    "body": ["allSettled($1, {$2}): Promise<$3>"]
+  },
+
+  "scopeBind": {
+    "scope": "javascript,typescript",
+    "prefix": ["bind", "scpbnd"],
+    "body": ["const $1 = scopeBind($2)"]
+  },
+
+  //Extras
+
+  "Watch": {
+    "scope": "javascript,typescript",
+    "prefix": ["watch", "log"],
+    "body": ["$1.watch(v => console.log($2, v))"]
+  },
+
+  "Async Effect": {
+    "scope": "javascript,typescript",
+    "prefix": ["asyncfx"],
+    "body": [
+      "export const $1Fx = createEffect<$2>(async () => {",
+      "\treturn await $3",
+      "})"
+    ]
+  },
+
+  //React bindings
+
+  "useUnit": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": ["useUnit"],
+    "body": ["const $1 = useUnit($2)"]
+  },
+
+  "useStore": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": ["useStore"],
+    "body": ["const $1 = useStore($$2)"]
+  },
+
+  "useStoreMap": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": ["useStoreMap"],
+    "body": [
+      "const $1 = useStoreMap({",
+      "\tstore: $$2,",
+      "\tkeys: [$3],",
+      "\tfn: ($4) => $5,",
+      "})"
+    ]
+  },
+
+  "useList": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": ["useList", "list"],
+    "body": ["const $1 = useList({", "\tstore: $$2,", "\tfn: ($3) => $4,", "})"]
+  }
+}
