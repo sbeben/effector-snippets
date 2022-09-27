@@ -132,8 +132,8 @@
     "scope": "javascript,typescript",
     "prefix": ["asyncfx"],
     "body": [
-      "export const $1Fx = createEffect<$2>(async () => {",
-      "\treturn await $3",
+      "export const $1Fx = createEffect<$2>(async ($3) => {",
+      "\treturn await $4",
       "})"
     ]
   },
