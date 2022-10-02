@@ -1,14 +1,16 @@
 # effector-snippets
 
 An effector.js snippet extention for vscode.  
-Includes all basic usnits, react-bindings and some extras.
+Includes all basic units, react-bindings and some extras.
 
 ## How to use
 
 - Install effector-snippets extention in vscode marketplace.
-- Open your model file and type unit name (for example "store" or "sample")
+- Open your model file and type unit name    
+  (for example "store" or "sample" or even "splt" or "fwd")  
 - Hit Enter and enjoy
-- Use TAB and Shift-Tab combination to jump over preset cursor points and BACKSPACE to delete selected chunks
+- Use TAB and Shift-Tab combination to jump between selected fields  
+  and preset cursor points   
 
 The full list of snippets is available in /snippets folder.
 
