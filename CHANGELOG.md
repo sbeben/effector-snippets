@@ -25,3 +25,16 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 -readme
 -"combine" snippet fix
+
+## [0.2.0] - 2022-10-02
+
+### Added
+
+-selected chunks (variables)
+-custom variable declarations
+-customizable unit properties
+
+### Changed
+
+-now some of snippets are devided on chunks, you can enter them and type inside by clicking TAB or delete them by clicking BACKSPACE and go further using TAB
+-readme

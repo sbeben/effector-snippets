@@ -2,41 +2,51 @@
   "Create Store": {
     "scope": "javascript,typescript",
     "prefix": ["store", "str"],
-    "body": ["export const $$1 = createStore<$2>($3)"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} $${3:} = }createStore<$4>(${5:value})"
+    ]
   },
 
   "Create Event": {
     "scope": "javascript,typescript",
     "prefix": ["event", "evt"],
-    "body": ["export const $1 = createEvent<$2>()"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} ${3:} = }createEvent<$4>($5)"
+    ]
   },
 
   "Create Effect": {
     "scope": "javascript,typescript",
     "prefix": ["effect", "fx"],
-    "body": ["export const $1Fx = createEffect<$2>($3)"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} ${3:}Fx = }createEffect<$4>($5)"
+    ]
   },
 
   "Create Domain": {
     "scope": "javascript,typescript",
     "prefix": ["domain", "dmn"],
-    "body": ["export const $1 = createDomain($2)"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} ${3:} = }createDomain(${4:name})"
+    ]
   },
 
   "combine": {
     "scope": "javascript,typescript",
     "prefix": ["combine", "cmbn"],
-    "body": ["combine({$2},($3) => {$4})"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} $${3:} = }combine(${4:{${5:{key:store\\}}\\}},($6) => ${7:{${8:}\\}})"
+    ]
   },
 
   "attach": {
     "scope": "javascript,typescript",
     "prefix": ["attach", "atch"],
     "body": [
-      "attach({",
-      "\teffect: $1,",
-      "\tmapParams: ($2) => $3,",
-      "\tsource: $4,",
+      "${1:${2|export const, const, export let, let|} ${3:}Fx = }attach({",
+      "\teffect: $4Fx,",
+      "\t${5:source: ${6:unit|{key:unit\\}},}",
+      "\t${7:mapParams: ($8) => ${9:${10:}},}",
       "})"
     ]
   },
@@ -45,12 +55,12 @@
     "scope": "javascript,typescript",
     "prefix": ["sample", "smpl"],
     "body": [
-      "sample({",
-      "\tclock: $1,",
-      "\tsource: $2,",
-      "\tfilter: $3,",
-      "\tfn:($4) => $5,",
-      "\ttarget: $6,",
+      "${1:${2|export const, const, export let, let|} ${3:} = }sample({",
+      "\t${4:clock: ${5:unit|unit[]},}",
+      "\t${6:source: ${7:unit|{key:unit\\}},}",
+      "\t${8:filter: ${9:},}",
+      "\t${10:fn:(${11:}) => ${12:},}",
+      "\t${13:target: ${14:unit|unit[]},}",
       "})"
     ]
   },
@@ -59,11 +69,11 @@
     "scope": "javascript,typescript",
     "prefix": ["split", "splt"],
     "body": [
-      "split({",
-      "\tclock:$1,",
-      "\tsource:$2,",
-      "\tmatch:{$3:},",
-      "\tcases:{$4:},",
+      "${1:${2|export const, const, export let, let|} ${3:} = }split({",
+      "\t${4:clock: ${5:unit|unit[]},}",
+      "\t${6:source: ${7:unit|{key:unit\\}},}",
+      "\t${8:match: ${9:{${10:}\\}},}",
+      "\t${11:cases: ${12:{${13:}\\}},}",
       "})"
     ]
   },
@@ -71,49 +81,75 @@
   "createApi": {
     "scope": "javascript,typescript",
     "prefix": ["createApi", "api"],
-    "body": ["createApi({", "\t$$1,", "\t{$2: ($3) => $4},", "})"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} ${3:} = }createApi({",
+      "\t$$4,",
+      "\t{${5:eventName}: ($6) => $7},",
+      "})"
+    ]
   },
 
   "forward": {
     "scope": "javascript,typescript",
     "prefix": ["forward", "fwd"],
-    "body": ["forward({", "\tfrom: $1,", "\tto: $2,", "})"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} ${3:} = }forward({",
+      "\tfrom: ${4:unit|unit[]},",
+      "\tto: ${5:unit|unit[]},",
+      "})"
+    ]
   },
 
   "merge": {
     "scope": "javascript,typescript",
     "prefix": ["merge", "mrg"],
-    "body": ["export const $1 = merge([$2])"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} ${3:} = }merge([${4:units}])"
+    ]
   },
 
   "fromObservable": {
     "scope": "javascript,typescript",
     "prefix": ["observable", "obsrv"],
-    "body": ["export const $1 = fromObservable($2)"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} ${3:} = }fromObservable(${4:observable})"
+    ]
   },
 
   "Scope": {
     "scope": "javascript,typescript",
     "prefix": ["scope", "fork"],
-    "body": ["export const $1 = fork($2)"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} ${3:} = }fork(${4:${5:domain},{",
+      "\t${6:values: ${7:},}",
+      "\t${8:handlers: ${9:},}",
+      "\\}})"
+    ]
   },
 
   "Serialize": {
     "scope": "javascript,typescript",
     "prefix": ["serialize", "srlz"],
-    "body": ["export const $1 = serialize($2)"]
+    "body": [
+      "${1:${2|export const, const, export let, let|} ${3:} = }serialize(${4:${5:scope},{",
+      "\t${6:ignore: ${7:store[]},}",
+      "\t${8:onlyChanges: ${9|true,false|},}",
+      "\\}})"
+    ]
   },
 
   "Hydrate": {
     "scope": "javascript,typescript",
     "prefix": ["hydrate", "hdrt"],
-    "body": ["hydrate($1, {$2}): void"]
+    "body": ["hydrate(${1:domainOrScope}, {$2})"]
   },
 
   "allSettled": {
     "scope": "javascript,typescript",
-    "prefix": ["settled", "stld"],
-    "body": ["allSettled($1, {$2}): Promise<$3>"]
+    "prefix": ["allSettled", "settled", "stld"],
+    "body": [
+      "allSettled(${1:unit}, ${2:{${3:scope}, ${4:params}\\}}): Promise<$5>"
+    ]
   },
 
   "scopeBind": {
@@ -156,8 +192,8 @@
     "body": [
       "const $1 = useStoreMap({",
       "\tstore: $$2,",
-      "\tkeys: [$3],",
-      "\tfn: ($4) => $5,",
+      "\t${3:keys: [${4:}],}",
+      "\tfn: ($5) => $6,",
       "})"
     ]
   },
@@ -165,6 +201,15 @@
   "useList": {
     "scope": "javascriptreact,typescriptreact",
     "prefix": ["useList", "list"],
-    "body": ["const $1 = useList({", "\tstore: $$2,", "\tfn: ($3) => $4,", "})"]
+    "body": [
+      "${1:const ${2:} = }useList({",
+      "\tstore: $$3,",
+      "\t${4:fn: (${5:}) => ${6:},}",
+      "\t${7:config: {",
+      "\t\t${8:keys: ${9:any[]}}",
+      "\t\t${10:fn: (${11:}) => ${12:}}",
+      "\t\\}}",
+      "})"
+    ]
   }
 }
